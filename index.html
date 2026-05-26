@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RELAÇÕES DO ECOSSISTEMA - Passa ou Repassa</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: linear-gradient(145deg, #c8e6d9 0%, #a5d6a7 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 950px;
+    background: #ffffffdd;
+    backdrop-filter: blur(2px);
+    border-radius: 40px;
+    padding: 25px;
+    box-shadow: 0 25px 45px rgba(0, 40, 0, 0.3);
+    border: 1px solid #e0f2e9;
+}
+
+h1 {
+    text-align: center;
+    color: #1b5e2a;
+    margin-bottom: 15px;
+    font-size: 2.8rem;
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 0 #c8e6d9;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1f6b3b;
+}
+
+p {
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    color: #2c3e2f;
+}
+
+button {
+    border: none;
+    border-radius: 60px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.02);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.iniciar {
+    width: 100%;
+    background: #2e7d32;
+    color: white;
+    font-size: 1.4rem;
+    padding: 14px;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+.pergunta {
+    background: #fef9e6;
+    border: 2px solid #7cc48b;
+    border-radius: 48px;
+    padding: 25px 18px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    min-height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1f3b2c;
+    box-shadow: inset 0 0 0 1px #fff8, 0 6px 12px rgba(0,0,0,0.05);
+}
+
+.timer {
+    text-align: center;
+    font-size: 2rem;
+    color: #c0392b;
+    margin-bottom: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.placar {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.time {
+    flex: 1;
+    background: #eaf7e6;
+    padding: 14px 10px;
+    border-radius: 32px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #1c441e;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border: 1px solid #bcddae;
+}
+
+.time span {
+    font-size: 2.2rem;
+    display: block;
+    font-weight: 800;
+    color: #1f5e2d;
+}
+
+.equipeAtual {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    background: #d9f0da;
+    padding: 8px;
+    border-radius: 40px;
+    color: #0a4220;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.respostas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0 20px;
+}
+
+.respostaBtn {
+    background: #2c6e9e;
+    color: white;
+    padding: 14px;
+    font-size: 1.05rem;
+    border-radius: 50px;
+    transition: all 0.2s;
+}
+
+.respostaBtn:hover {
+    background: #1f5580;
+    transform: scale(1.02);
+}
+
+.passar {
+    background: #f5a623;
+    color: white;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 1.2rem;
+    padding: 14px;
+}
+
+.tela {
+    display: none;
+    animation: fade 0.3s ease;
+}
+
+.ativa {
+    display: block;
+}
+
+.ranking {
+    text-align: center;
+    background: #f9fff7;
+    border-radius: 48px;
+    padding: 30px 20px;
+}
+
+.ranking h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.ranking p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.feedback {
+    margin: 10px auto 20px auto;
+    padding: 12px 16px;
+    border-radius: 60px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 90%;
+    backdrop-filter: blur(8px);
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.feedback-success {
+    background: #c8f0d1;
+    color: #155724;
+    border-left: 6px solid #2e7d32;
+    border-right: 6px solid #2e7d32;
+}
+
+.feedback-error {
+    background: #ffe0e0;
+    color: #a41e1e;
+    border-left: 6px solid #c0392b;
+    border-right: 6px solid #c0392b;
+}
+
+.feedback-warning {
+    background: #fff0cf;
+    color: #9e5e0b;
+    border-left: 6px solid #e67e22;
+    border-right: 6px solid #e67e22;
+}
+
+.disabled-btn {
+    opacity: 0.6;
+    pointer-events: none;
+    transform: none !important;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* responsivo */
+@media (max-width: 600px) {
+    .container {
+        padding: 18px;
+    }
+    .respostas {
+        grid-template-columns: 1fr;
+    }
+    .pergunta {
+        font-size: 1.2rem;
+        padding: 18px;
+    }
+    .timer {
+        font-size: 1.8rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- TELA INICIAL -->
+    <div id="inicio" class="tela ativa">
+        <h1>🌿 RELAÇÕES DO ECOSSISTEMA</h1>
+        <p>
+            🌱 <strong>PASSA OU REPASSA ECOLÓGICO</strong> 🌱<br>
+            Teste seus conhecimentos sobre relações entre os seres vivos!
+        </p>
+        <p>
+            ⚡ <strong>Regras dinâmicas:</strong><br>
+            ✅ Acertou: Ganha 1 ponto <br>
+            ❌ Errou: Perde 1 ponto e passa a vez<br>
+            🔄 Passar ou Tempo esgotado: A pergunta vai pra outra equipe<br>
+            🕒 Cada pergunta: <strong>45 segundos</strong>
+        </p>
+        
+        <button class="iniciar" id="btnIniciar">🌿 INICIAR JOGO 🌿</button>
+    </div>
+
+    <!-- TELA DO JOGO -->
+    <div id="jogo" class="tela">
+        <div class="placar">
+            <div class="time">
+                🟢 Equipe A<br>
+                <span id="pontosA">0</span>
+            </div>
+            <div class="time">
+                🔵 Equipe B<br>
+                <span id="pontosB">0</span>
+            </div>
+        </div>
+
+        <div class="equipeAtual" id="equipeAtual">
+            Vez da Equipe A
+        </div>
+
+        <!-- FEEDBACK VISUAL (sem pop-up) -->
+        <div id="feedbackMsg" class="feedback" style="display: none;"></div>
+
+        <div class="timer" id="timer">
+            45
+        </div>
+
+        <div class="pergunta" id="pergunta">
+            Carregando pergunta...
+        </div>
+
+        <div class="respostas" id="respostas">
+        </div>
+
+        <button class="passar" id="btnPassar">
+            🔄 Passar Pergunta
+        </button>
+    </div>
+
+    <!-- TELA FINAL -->
+    <div id="fim" class="tela ranking">
+        <h1>🏆 FIM DE JOGO 🏆</h1>
+        <p id="resultado"></p>
+        <p id="campeao"></p>
+        <button class="iniciar" id="btnReiniciar" style="margin-top: 30px; background: #2c6e9e;">🔄 Jogar Novamente</button>
+    </div>
+</div>
+
+<script>
+// --------------------------------------------------------------
+// BASE DE PERGUNTAS (RELAÇÕES ECOLÓGICAS)
+// --------------------------------------------------------------
+const perguntas = [
+    { pergunta: "Relação em que ambos os organismos se beneficiam.", opcoes: ["Mutualismo", "Parasitismo", "Predação", "Competição"], correta: "Mutualismo" },
+    { pergunta: "Relação em que um organismo vive às custas do outro.", opcoes: ["Comensalismo", "Protocooperação", "Parasitismo", "Inquilinismo"], correta: "Parasitismo" },
+    { pergunta: "Relação em que um animal caça outro para alimentação.", opcoes: ["Predação", "Mutualismo", "Competição", "Colônia"], correta: "Predação" },
+    { pergunta: "Relação em que um se beneficia e o outro não é afetado.", opcoes: ["Competição", "Comensalismo", "Parasitismo", "Sociedade"], correta: "Comensalismo" },
+    { pergunta: "Disputa entre organismos pelo mesmo recurso.", opcoes: ["Mutualismo", "Predação", "Competição", "Inquilinismo"], correta: "Competição" },
+    { pergunta: "Relação harmônica entre indivíduos da mesma espécie unidos fisicamente.", opcoes: ["Sociedade", "Colônia", "Predação", "Parasitismo"], correta: "Colônia" },
+    { pergunta: "Relação entre indivíduos da mesma espécie sem união corporal (divisão de tarefas).", opcoes: ["Comensalismo", "Sociedade", "Mutualismo", "Competição"], correta: "Sociedade" }
+];
+
+// Variáveis de estado
+let indice = 0;
+let pontosA = 0;
+let pontosB = 0;
+let equipe = "A";          // "A" ou "B"
+let tempo = 45;
+let cronometro = null;
+let timeoutAcao = null;     // timeout para avançar/passar após feedback
+let botoesHabilitados = true;
+
+// Elementos DOM
+const inicioDiv = document.getElementById("inicio");
+const jogoDiv = document.getElementById("jogo");
+const fimDiv = document.getElementById("fim");
+const pontosASpan = document.getElementById("pontosA");
+const pontosBSpan = document.getElementById("pontosB");
+const equipeAtualSpan = document.getElementById("equipeAtual");
+const timerDiv = document.getElementById("timer");
+const perguntaDiv = document.getElementById("pergunta");
+const respostasDiv = document.getElementById("respostas");
+const feedbackDiv = document.getElementById("feedbackMsg");
+const btnPassar = document.getElementById("btnPassar");
+
+// --------------------------------------------------------------
+// FUNÇÕES AUXILIARES (feedback visual / controle)
+// --------------------------------------------------------------
+function limparTimeouts() {
+    if (cronometro) {
+        clearInterval(cronometro);
+        cronometro = null;
+    }
+    if (timeoutAcao) {
+        clearTimeout(timeoutAcao);
+        timeoutAcao = null;
+    }
+}
+
+function desabilitarBotoes(disabled) {
+    botoesHabilitados = !disabled;
+    const botoesResposta = document.querySelectorAll(".respostaBtn");
+    botoesResposta.forEach(btn => {
+        if (disabled) btn.classList.add("disabled-btn");
+        else btn.classList.remove("disabled-btn");
+        btn.disabled = disabled;
+    });
+    if (disabled) {
+        btnPassar.classList.add("disabled-btn");
+        btnPassar.disabled = true;
+    } else {
+        btnPassar.classList.remove("disabled-btn");
+        btnPassar.disabled = false;
+    }
+}
+
+function exibirMensagem(texto, tipo) {
+    // tipo: 'success', 'error', 'warning'
+    feedbackDiv.style.display = "block";
+    feedbackDiv.innerHTML = texto;
+    feedbackDiv.className = "feedback";
+    if (tipo === 'success') feedbackDiv.classList.add("feedback-success");
+    else if (tipo === 'error') feedbackDiv.classList.add("feedback-error");
+    else feedbackDiv.classList.add("feedback-warning");
+    
+    // Esconde automaticamente após 1.5s (mas pode ser sobrescrito)
+    setTimeout(() => {
+        if (feedbackDiv.style.display === "block") {
+            feedbackDiv.style.opacity = "0.9";
+            setTimeout(() => {
+                if (feedbackDiv.innerHTML === texto) // evita sumir se outra mensagem veio
+                    feedbackDiv.style.display = "none";
+            }, 200);
+        }
+    }, 1500);
+}
+
+function esconderFeedback() {
+    feedbackDiv.style.display = "none";
+    feedbackDiv.className = "feedback";
+}
+
+// atualiza placar na tela
+function atualizarPlacar() {
+    pontosASpan.innerText = pontosA;
+    pontosBSpan.innerText = pontosB;
+}
+
+// TROCA DE EQUIPE (sem avançar pergunta)
+function trocarEquipe() {
+    equipe = (equipe === "A") ? "B" : "A";
+    equipeAtualSpan.innerText = `🎤 Vez da Equipe ${equipe}`;
+}
+
+// FUNÇÃO PRINCIPAL: mostrar próxima pergunta (respeitando índice atual)
+function mostrarPergunta() {
+    // Limpa qualquer timeout pendente e para cronômetro anterior
+    limparTimeouts();
+    desabilitarBotoes(false);
+    esconderFeedback();
+    
+    // Se acabaram as perguntas? Verificação dupla
+    if (indice >= perguntas.length) {
+        finalizarJogo();
+        return;
+    }
+    
+    const perguntaAtual = perguntas[indice];
+    perguntaDiv.innerText = perguntaAtual.pergunta;
+    
+    // Renderiza botões de resposta
+    respostasDiv.innerHTML = "";
+    perguntaAtual.opcoes.forEach(opcao => {
+        const btn = document.createElement("button");
+        btn.innerText = opcao;
+        btn.classList.add("respostaBtn");
+        btn.disabled = false;
+        btn.onclick = () => verificarResposta(opcao);
+        respostasDiv.appendChild(btn);
+    });
+    
+    // Iniciar cronômetro
+    tempo = 45;
+    timerDiv.innerText = tempo;
+    cronometro = setInterval(() => {
+        if (!botoesHabilitados) return; // durante transição não decrementa?
+        if (tempo <= 1) {
+            // TEMPO ESGOTADO!
+            clearInterval(cronometro);
+            cronometro = null;
+            if (botoesHabilitados) {
+                // impede múltiplas execuções
+                desabilitarBotoes(true);
+                // Exibir mensagem de tempo esgotado
+                exibirMensagem("⏰ TEMPO ESGOTADO! A pergunta passará para a outra equipe.", "warning");
+                // Trocar equipe
+                trocarEquipe();
+                // Avançar para a PRÓXIMA pergunta (pois o tempo esgotado encerra essa rodada)
+                timeoutAcao = setTimeout(() => {
+                    proximaPergunta();
+                }, 1300);
+            }
+        } else {
+            tempo--;
+            timerDiv.innerText = tempo;
+        }
+    }, 1000);
+}
+
+// Resposta do jogador
+function verificarResposta(opcaoEscolhida) {
+    // Impedir múltiplos cliques enquanto processa
+    if (!botoesHabilitados) return;
+    
+    const perguntaAtual = perguntas[indice];
+    const isCorreta = (opcaoEscolhida === perguntaAtual.correta);
+    
+    // Para o cronometro imediatamente
+    limparTimeouts(); // para o cronometro e eventuais timeouts
+    desabilitarBotoes(true);   // bloqueia novos cliques e botão passar
+    
+    let mensagem = "";
+    let tipoFeedback = "";
+    
+    if (isCorreta) {
+        // Acertou: ganha ponto e NÃO troca equipe
+        if (equipe === "A") {
+            pontosA++;
+            mensagem = `✅ EQUIPE A ACERTOU! +1 ponto. ✅`;
+        } else {
+            pontosB++;
+            mensagem = `✅ EQUIPE B ACERTOU! +1 ponto. ✅`;
+        }
+        tipoFeedback = "success";
+        atualizarPlacar();
+		 trocarEquipe();
+        // Continua com a mesma equipe, avança para próxima pergunta
+        timeoutAcao = setTimeout(() => {
+            proximaPergunta();
+        }, 1400);
+    } else {
+        // Errou: perde ponto e troca equipe
+        if (equipe === "A") {
+            pontosA--;
+            mensagem = `❌ EQUIPE A ERROU! Resposta correta: ${perguntaAtual.correta}. -1 ponto. Vez trocada. ❌`;
+        } else {
+            pontosB--;
+            mensagem = `❌ EQUIPE B ERROU! Resposta correta: ${perguntaAtual.correta}. -1 ponto. Vez trocada. ❌`;
+        }
+        tipoFeedback = "error";
+        atualizarPlacar();
+        // Trocar equipe devido ao erro
+        trocarEquipe();
+        // Avança para a próxima pergunta
+        timeoutAcao = setTimeout(() => {
+            proximaPergunta();
+        }, 1600);
+    }
+    
+    exibirMensagem(mensagem, tipoFeedback);
+}
+
+// Botão passar pergunta (troca equipe mas mantém a mesma pergunta)
+function passarPergunta() {
+    if (!botoesHabilitados) return;
+    if (indice >= perguntas.length) return;
+    
+    limparTimeouts();
+    desabilitarBotoes(true);
+    
+    exibirMensagem("🔄 PERGUNTA PASSADA! A vez vai para a outra equipe.", "warning");
+    
+    // Trocar equipe
+    trocarEquipe();
+    
+    // Não avança índice, mantém a mesma pergunta
+    timeoutAcao = setTimeout(() => {
+        // reexibe a mesma pergunta para a nova equipe
+        mostrarPergunta();
+    }, 1300);
+}
+
+// Avança para o próximo índice (encerra pergunta atual)
+function proximaPergunta() {
+    indice++;
+    if (indice < perguntas.length) {
+        mostrarPergunta();
+    } else {
+        finalizarJogo();
+    }
+}
+
+// Final do jogo
+function finalizarJogo() {
+    limparTimeouts();
+    desabilitarBotoes(false);
+    jogoDiv.classList.remove("ativa");
+    fimDiv.classList.add("ativa");
+    
+    let resultadoHTML = `🌿 PLACAR FINAL 🌿<br><br>🟢 Equipe A: ${pontosA} pontos<br>🔵 Equipe B: ${pontosB} pontos`;
+    document.getElementById("resultado").innerHTML = resultadoHTML;
+    
+    let vencedor = "";
+    if (pontosA > pontosB) vencedor = "🏆 GRANDE VITÓRIA DA EQUIPE A! 🏆";
+    else if (pontosB > pontosA) vencedor = "🏆 GRANDE VITÓRIA DA EQUIPE B! 🏆";
+    else vencedor = "🤝 EMPATE! AMBAS EQUIPES DOMINAM A ECOLOGIA! 🤝";
+    document.getElementById("campeao").innerText = vencedor;
+}
+
+// Reiniciar completamente o jogo
+function reiniciarJogoCompleto() {
+    // resetar variáveis globais
+    indice = 0;
+    pontosA = 0;
+    pontosB = 0;
+    equipe = "A";
+    tempo = 45;
+    limparTimeouts();
+    botoesHabilitados = true;
+    
+    atualizarPlacar();
+    equipeAtualSpan.innerText = "🎤 Vez da Equipe A";
+    timerDiv.innerText = "45";
+    esconderFeedback();
+    
+    // Esconder telas e mostrar início ou já começar?
+    inicioDiv.classList.remove("ativa");
+    jogoDiv.classList.remove("ativa");
+    fimDiv.classList.remove("ativa");
+    inicioDiv.classList.add("ativa");
+    
+    // Limpa possíveis elementos de resposta
+    respostasDiv.innerHTML = "";
+    perguntaDiv.innerText = "Pergunta";
+}
+
+// Iniciar jogo (a partir da tela inicial)
+function iniciarJogo() {
+    // Reset completo
+    indice = 0;
+    pontosA = 0;
+    pontosB = 0;
+    equipe = "A";
+    tempo = 45;
+    limparTimeouts();
+    botoesHabilitados = true;
+    atualizarPlacar();
+    equipeAtualSpan.innerText = "🎤 Vez da Equipe A";
+    timerDiv.innerText = "45";
+    esconderFeedback();
+    
+    // Trocar telas
+    inicioDiv.classList.remove("ativa");
+    fimDiv.classList.remove("ativa");
+    jogoDiv.classList.add("ativa");
+    
+    // Iniciar com a primeira pergunta
+    mostrarPergunta();
+}
+
+// --------------------------------------------------------------
+// EVENTOS E INICIALIZAÇÃO
+// --------------------------------------------------------------
+document.getElementById("btnIniciar").addEventListener("click", iniciarJogo);
+document.getElementById("btnReiniciar").addEventListener("click", () => {
+    reiniciarJogoCompleto();
+});
+btnPassar.addEventListener("click", passarPergunta);
+
+// Prevenir comportamento padrão em botões já configurados
+window.onload = () => {
+    // Configuração extra: garantir que o feedback não fique visível sem necessidade
+    esconderFeedback();
+    // Tela inicial ativa já por padrão
+};
+</script>
+</body>
+</html>
