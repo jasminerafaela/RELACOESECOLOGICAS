@@ -477,7 +477,7 @@ function mostrarPergunta() {
     });
     
     // Iniciar cronômetro
-    tempo = 45;
+    tempo = 180;
     timerDiv.innerText = tempo;
     cronometro = setInterval(() => {
         if (!botoesHabilitados) return; // durante transição não decrementa?
@@ -611,13 +611,13 @@ function reiniciarJogoCompleto() {
     pontosA = 0;
     pontosB = 0;
     equipe = "A";
-    tempo = 45;
+    tempo = 180;
     limparTimeouts();
     botoesHabilitados = true;
     
     atualizarPlacar();
     equipeAtualSpan.innerText = "🎤 Vez da Equipe A";
-    timerDiv.innerText = "45";
+    timerDiv.innerText = "180";
     esconderFeedback();
     
     // Esconder telas e mostrar início ou já começar?
@@ -638,12 +638,12 @@ function iniciarJogo() {
     pontosA = 0;
     pontosB = 0;
     equipe = "A";
-    tempo = 45;
+    tempo = 180;
     limparTimeouts();
     botoesHabilitados = true;
     atualizarPlacar();
     equipeAtualSpan.innerText = "🎤 Vez da Equipe A";
-    timerDiv.innerText = "45";
+    timerDiv.innerText = "180";
     esconderFeedback();
     
     // Trocar telas
