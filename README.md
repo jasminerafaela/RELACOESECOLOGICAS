@@ -7,13 +7,18 @@
 🎮 Sobre o jogo
 
 O **Relações do ecossistema** é um quiz interativo onde duas equipes (A e B) competem respondendo perguntas sobre **mutualismo, parasitismo, predação, comensalismo, competição, colônia, sociedade, canibalismo, amensalismo e protocooperação**.
+
 Cada pergunta é uma pequena história do cotidiano da natureza. Os alunos precisam identificar qual relação ecológica está acontecendo.
 
 🧠 Como jogar
 
 O jogo é projetado para ser jogado em **duas equipes** (A e B).
+
 Uma pergunta aparece na tela com um **timer de 3 minutos**.
+
 A equipe da vez discute e escolhe uma resposta.
+
+
 **Acertou**  +1 ponto  
 **Errou**  –1 ponto  
 **Passou** → pergunta vai para o outro time (sem perda de pontos)
@@ -41,8 +46,10 @@ Pode ser usado como **revisão lúdica** antes de provas.
 O código é aberto e **totalmente customizável**: você pode mudar as perguntas, o tempo do timer, a pontuação inicial, etc.
 Sugestão: após o jogo, aplique uma **autoavaliação** para avaliar a fixação.
 
+
 #📄 Licença
 Este projeto está sob a licença **MIT**. Sinta-se à vontade para usar, modificar e compartilhar.
+
 ✏️ Créditos
 **Conteúdo e roteiro das perguntas** e **Desenvolvimento do jogo** Jasmine Rafaela Santana Xavier
 **Inspiração** Meu companheiro Rividy Euclides e meus professores da Universidade Federal de Sergipe
