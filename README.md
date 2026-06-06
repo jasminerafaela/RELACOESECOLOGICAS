@@ -33,10 +33,18 @@ Vence a equipe que somar **mais pontos** ao final de todas as perguntas.
 
 1. Faça o download ou clone este repositório:
    ```bash
-   [https://github.com/jasminerafaela/RELACOESECOSSISTEMAS/]
+   Acesse o link no seu navegador: https://github.com/jasminerafaela/RELACOESECOSSISTEMAS/
    ```
-2. Abra o arquivo `index.html` em qualquer navegador moderno (Chrome, Edge, Firefox).
-3. Projete a tela para a turma e divirta-se!
+   
+2. Na página do repositório, clique no botão verde "<> Code".
+
+3. No menu que abrir, selecione "Download ZIP".
+
+4. O arquivo .zip será baixado. Depois é só extrair no seu computador.
+
+5. Abra o arquivo `index.html` em qualquer navegador moderno (Chrome, Edge, Firefox).
+
+6. Projete a tela para a turma e divirta-se!
 **Sem necessidade de instalação ou servidor.** O jogo roda 100% no navegador.
 
 📸 Capturas de tela
