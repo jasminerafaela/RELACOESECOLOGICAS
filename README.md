@@ -21,8 +21,10 @@ A equipe da vez discute e escolhe uma resposta.
 
 **Acertou**  +1 ponto  
 **Errou**  –1 ponto  
-**Passou** → pergunta vai para o outro time (sem perda de pontos)
-**Tempo esgotado** → vez passa para o outro time (sem alterar pontuação)
+**Passou** pergunta vai para o outro time (sem perda de pontos)
+
+**Tempo esgotado** vez passa para o outro time (sem alterar pontuação)
+
 Vence a equipe que somar **mais pontos** ao final de todas as perguntas.
 
 💡 Dica para professores: O jogo já vem com 10 perguntas, mas você pode editar o arquivo para adicionar ou modificar as questões.
@@ -43,14 +45,16 @@ Vence a equipe que somar **mais pontos** ao final de todas as perguntas.
 👩‍🏫 Para professores
 O jogo é alinhado à **BNCC**.
 Pode ser usado como **revisão lúdica** antes de provas.
+
+
 O código é aberto e **totalmente customizável**: você pode mudar as perguntas, o tempo do timer, a pontuação inicial, etc.
 Sugestão: após o jogo, aplique uma **autoavaliação** para avaliar a fixação.
 
 
-#📄 Licença
+📄 Licença:
 Este projeto está sob a licença **MIT**. Sinta-se à vontade para usar, modificar e compartilhar.
 
-✏️ Créditos
+✏️ Créditos:
 **Conteúdo e roteiro das perguntas** e **Desenvolvimento do jogo** Jasmine Rafaela Santana Xavier
 **Inspiração** Meu companheiro Rividy Euclides e meus professores da Universidade Federal de Sergipe
 
