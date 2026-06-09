@@ -27,7 +27,12 @@ A equipe da vez discute e escolhe uma resposta.
 
 Vence a equipe que somar **mais pontos** ao final de todas as perguntas.
 
-💡 Dica para professores: O jogo já vem com 10 perguntas, mas você pode editar o arquivo para adicionar ou modificar as questões.
+👩‍🏫 Para professores
+O jogo é alinhado à **BNCC**.
+Pode ser usado como **revisão lúdica** antes de provas.
+O jogo já vem com 10 perguntas, mas você pode editar o arquivo para adicionar ou modificar as questões.
+O código é aberto, o que te dá liberdade de: você poder mudar as perguntas, o tempo do timer, a pontuação inicial, etc.
+
 
 🚀 Como executar o jogo
 
@@ -50,14 +55,6 @@ Vence a equipe que somar **mais pontos** ao final de todas as perguntas.
 📸 Capturas de tela
 [Tela do jogo](IMAGE.PNG)
 
-👩‍🏫 Para professores
-O jogo é alinhado à **BNCC**.
-Pode ser usado como **revisão lúdica** antes de provas.
-
-
-O código é aberto e **totalmente customizável**: você pode mudar as perguntas, o tempo do timer, a pontuação inicial, etc.
-Sugestão: após o jogo, aplique uma **autoavaliação** para avaliar a fixação.
-
 
 📄 Licença:
 Este projeto está sob a licença **MIT**. Sinta-se à vontade para usar, modificar e compartilhar.
@@ -66,4 +63,4 @@ Este projeto está sob a licença **MIT**. Sinta-se à vontade para usar, modifi
 **Conteúdo e roteiro das perguntas** e **Desenvolvimento do jogo** Jasmine Rafaela Santana Xavier
 **Inspiração** Meu companheiro Rividy Euclides e meus professores da Universidade Federal de Sergipe
 
-🎲 **Divirta-se aprendendo e cuidando do ecossistema!** 🌎
+🎲 **Divirta-se aprendendo sobre as relações ecológicas!** 🌎
