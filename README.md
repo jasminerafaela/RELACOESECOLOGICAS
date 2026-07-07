@@ -1,12 +1,12 @@
-🌿 Relações do ecossistema – Jogo de Passa ou Repassa sobre Relações Ecológicas
+🌿 Relações ecológicas – Jogo de Passa ou Repassa sobre Relações Ecológicas
 
-![Relações do ecossistema](https://img.shields.io/badge/Educação-Biologia-green) ![HTML](https://img.shields.io/badge/HTML5-Jogo-orange) ![Licença](https://img.shields.io/badge/Licença-MIT-blue)
+![Relações ecológicas](https://img.shields.io/badge/Educação-Biologia-green) ![HTML](https://img.shields.io/badge/HTML5-Jogo-orange) ![Licença](https://img.shields.io/badge/Licença-MIT-blue)
 
 Um jogo de tabuleiro virtual no estilo **Passa ou Repassa** para ensinar relações ecológicas de forma divertida. Perfeito para professores aplicarem em sala de aula ou para estudantes revisarem o conteúdo.
 
 🎮 Sobre o jogo
 
-O **Relações do ecossistema** é um quiz interativo onde duas equipes (A e B) competem respondendo perguntas sobre **mutualismo, parasitismo, predação, comensalismo, competição, colônia, sociedade, canibalismo, amensalismo e protocooperação**.
+O **Relações ecológicas** é um quiz interativo onde duas equipes (A e B) competem respondendo perguntas sobre **mutualismo, parasitismo, predação, comensalismo, competição, colônia, sociedade, canibalismo, amensalismo e protocooperação**.
 
 Cada pergunta é uma pequena história do cotidiano da natureza. Os alunos precisam identificar qual relação ecológica está acontecendo.
 
