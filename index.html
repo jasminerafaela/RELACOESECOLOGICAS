@@ -346,16 +346,175 @@ button:active {
 // BASE DE PERGUNTAS (RELAÇÕES ECOLÓGICAS)
 // --------------------------------------------------------------
 const perguntas = [
-    { pergunta: "O fungo e a alga moram juntos na mesma quitinete. O fungo busca água e minerais, a alga faz comida com a luz do sol. Se um sai, o outro não sobrevive sozinho. Que relação é essa?", opcoes: ["Mutualismo", "Parasitismo", "Predação", "Competição"], correta: "Mutualismo" },
-    { pergunta: "O piolho se mudou para a cabeça do menino, montou uma casa no couro cabeludo e toma café da manhã, almoço e jantar de sangue. O menino só coça. Que relação é essa?", opcoes: ["Comensalismo", "Protocooperação", "Parasitismo", "Inquilinismo"], correta: "Parasitismo" },
-    { pergunta: "No fundo do lago, o jacaré finge de tronco. A garça descansa em cima… Surpresa! O jacaré abre a boca e snap. Que relação é essa?", opcoes: ["Predação", "Mutualismo", "Competição", "Colônia"], correta: "Predação" },
-    { pergunta: "A raposa jantou um frango e deixou restos. O urubu chegou devagar e limpou tudo. A raposa já tinha ido embora e nem viu. Que relação é essa?", opcoes: ["Competição", "Comensalismo", "Parasitismo", "Sociedade"], correta: "Comensalismo" },
-    { pergunta: "Dois beija-flores amarelos e verdes voam em alta velocidade, bicando e girando no ar. Quem vai conseguir beber todo o néctar da flor primeiro? Que relação é essa?", opcoes: ["Mutualismo", "Predação", "Competição", "Inquilinismo"], correta: "Competição" },
-    { pergunta: "Os corais subaquáticos estão todos ligados, braço com braço, formando uma cidade colorida. Se um sente algo, todos vibram juntos. Que relação é essa?", opcoes: ["Sociedade", "Colônia", "Predação", "Parasitismo"], correta: "Colônia" },
-    { pergunta: "O caranguejo-ermitão passeia com uma anêmona colada na sua concha. Ela ganha carona para mais comida, e ele ganha uma armadura de tentáculos que queimam os inimigos. São amigos, mas cada um sabe viver sozinho. Que relação é essa?", opcoes: ["Sociedade", "Protocooperação", "Predação", "Mutualismo"], correta: "Protocooperação" }, 
-	{ pergunta: "O pinheiro-bravo soltou suas agulhas no chão e o solo ficou azedo, amargo. As plantinhas vizinhas tentaram crescer, mas suas raízes queimaram. O pinheiro nem percebeu, só queria ter seu cantinho.  Que relação é essa?" , opcoes: ["Colônia", "Amensalismo", "Comensalismo", "Inquilinismo"], correta: "Amensalismo" },
-	{ pergunta: "O louva-a-deus dançou a noite inteira com sua parceira. No finale, ela deu um abraço apertado e virou o jantar. Amor que acaba em lanche. Que relação é essa?", opcoes: ["Canibalismo", "Mutualismo", "Competição", "Parasitismo"], correta: "Canibalismo" },
-	{ pergunta: "As abelhas fizeram uma reunião: umas vão buscar pólen, outras vão cuidar dos ovos, e um time especial fica na entrada para expulsar inimigos. Que relação é essa?", opcoes: ["Comensalismo", "Sociedade", "Mutualismo", "Competição"], correta: "Sociedade" }
+    // Mutualismo
+    {
+        pergunta: "O fungo e a alga moram juntos na mesma quitinete. O fungo busca água e minerais, a alga faz comida com a luz do Sol. Se um dos dois sai, o outro não sobrevive sozinho. Que relação é essa?",
+        opcoes: ["Mutualismo", "Parasitismo", "Predação", "Competição"],
+        correta: "Mutualismo"
+    },
+    {
+        pergunta: "O cupim come madeira, mas não consegue digerir sozinho. Lá dentro do seu intestino moram uns microrganismos que fazem a digestão para ele. Em troca, eles ganham casa e comida. Se um sumir, o outro morre. Que relação é essa?",
+        opcoes: ["Mutualismo", "Comensalismo", "Protocooperação", "Parasitismo"],
+        correta: "Mutualismo"
+    },
+    {
+        pergunta: "Uma planta tem espinhos grandes, mas também tem umas formigas que moram dentro deles. Ela fornece comida doce para as formigas, e as formigas atacam qualquer bicho que tente comer suas folhas. Que relação é essa?",
+        opcoes: ["Mutualismo", "Sociedade", "Comensalismo", "Competição"],
+        correta: "Mutualismo"
+    },
+
+    // Parasitismo
+    {
+        pergunta: "O piolho se mudou para a cabeça do menino, montou uma casa no couro cabeludo e tomou café da manhã, almoço e jantar de sangue do menino. O menino só coça. Que relação é essa?",
+        opcoes: ["Parasitismo", "Predação", "Mutualismo", "Comensalismo"],
+        correta: "Parasitismo"
+    },
+    {
+        pergunta: "O carrapato grudou na pele do cachorro e ficou sugando sangue dia e noite. O cachorro coça, perde sangue e pode até ficar doente. Enquanto isso, o carrapato está bem alimentado e feliz. Que relação é essa?",
+        opcoes: ["Parasitismo", "Competição", "Mutualismo", "Predação"],
+        correta: "Parasitismo"
+    },
+    {
+        pergunta: "Uma lagarta foi invadida por ovos de uma vespa que foram colocados dentro do seu corpo. As larvas nascem e vão comendo a lagarta por dentro até ela morrer. Já a vespa garantiu a comida dos seus filhotes. Que relação é essa?",
+        opcoes: ["Parasitismo", "Predação", "Canibalismo", "Comensalismo"],
+        correta: "Parasitismo"
+    },
+
+    // Predação
+    {
+        pergunta: "No fundo do lago, o jacaré se finge de tronco. A garça descansa em cima e o jacaré abre a boca predando-a. Que relação é essa?",
+        opcoes: ["Predação", "Parasitismo", "Competição", "Comensalismo"],
+        correta: "Predação"
+    },
+    {
+        pergunta: "A aranha teceu sua teia e esperou uma presa. Um inseto desavisado voou direto para ela, ficou preso e a aranha correu para embrulhar o jantar. Que relação é essa?",
+        opcoes: ["Predação", "Parasitismo", "Mutualismo", "Competição"],
+        correta: "Predação"
+    },
+    {
+        pergunta: "O gato se escondeu atrás do sofá, olhou fixo para o rato que atravessava a sala e deu um bote. Que relação é essa?",
+        opcoes: ["Predação", "Canibalismo", "Competição", "Sociedade"],
+        correta: "Predação"
+    },
+
+    // Comensalismo
+    {
+        pergunta: "Bactérias que vivem na pele humana e se alimentam de células mortas sem causar doenças. Que relação é essa?",
+        opcoes: ["Comensalismo", "Parasitismo", "Mutualismo", "Predação"],
+        correta: "Comensalismo"
+    },
+    {
+        pergunta: "O tubarão rasga sua presa com os dentes e, enquanto se alimenta, restos de carne caem na água. Os peixes-piloto nadam rapidamente e comem as sobras. Que relação é essa?",
+        opcoes: ["Comensalismo", "Protocooperação", "Mutualismo", "Competição"],
+        correta: "Comensalismo"
+    },
+    {
+        pergunta: "As hienas caçaram e mataram uma zebra. Depois que elas se alimentaram e foram embora, os abutres desceram do céu e comeram os ossos e restos que sobraram. Que relação é essa?",
+        opcoes: ["Comensalismo", "Predação", "Canibalismo", "Parasitismo"],
+        correta: "Comensalismo"
+    },
+
+    // Competição intraespecífica
+    {
+        pergunta: "Dois beija-flores da mesma espécie disputam flores de um jardim, perseguindo-se e brigando para afastar o rival. Que relação ecológica é essa?",
+        opcoes: ["Competição intraespecífica", "Competição interespecífica", "Sociedade", "Predação"],
+        correta: "Competição intraespecífica"
+    },
+    {
+        pergunta: "Dois machos de uma mesma espécie de pássaro cantam bem alto no topo das árvores, cada um tentando mostrar que tem o melhor território para atrair fêmeas. Que relação é essa?",
+        opcoes: ["Competição intraespecífica", "Mutualismo", "Parasitismo", "Comensalismo"],
+        correta: "Competição intraespecífica"
+    },
+    {
+        pergunta: "Uma ninhada de filhotes de gato brigam entre si para conseguir mais leite da mãe. Os mais fortes empurram os mais fracos para beber primeiro. Todos são da mesma espécie e disputam pelo mesmo recurso. Que relação é essa?",
+        opcoes: ["Competição intraespecífica", "Canibalismo", "Colônia", "Sociedade"],
+        correta: "Competição intraespecífica"
+    },
+
+    // Colônia
+    {
+        pergunta: "Os corais subaquáticos estão todos ligados, braço a braço, formando uma cidade colorida. Se um sente algo, todos vibram juntos. Que relação é essa?",
+        opcoes: ["Colônia", "Sociedade", "Mutualismo", "Protocooperação"],
+        correta: "Colônia"
+    },
+    {
+        pergunta: "Os briozoários vivem em colônias subaquáticas, grudados em rochas e conchas. Eles são tão unidos que parecem uma única planta, mas são muitos indivíduos ligados anatomicamente. Que relação é essa?",
+        opcoes: ["Colônia", "Sociedade", "Comensalismo", "Competição"],
+        correta: "Colônia"
+    },
+    {
+        pergunta: "No fundo do mar, as ascídias estão grudadas em uma rocha, uma ao lado da outra, formando uma rede de pequenos seres ligados por um tecido comum. Elas parecem uma única criatura, mas são muitos indivíduos que compartilham a mesma estrutura e não conseguem se mover. Que relação é essa?",
+        opcoes: ["Colônia", "Sociedade", "Parasitismo", "Predação"],
+        correta: "Colônia"
+    },
+
+    // Protocooperação
+    {
+        pergunta: "O caranguejo-ermitão passeia com uma anêmona colada na sua concha. Ela ganha carona para conseguir mais comida, e ele ganha uma armadura de tentáculos que queimam os inimigos. São amigos, mas cada um consegue viver sozinho. Que relação é essa?",
+        opcoes: ["Protocooperação", "Mutualismo", "Comensalismo", "Sociedade"],
+        correta: "Protocooperação"
+    },
+    {
+        pergunta: "O jacaré vive nos rios e as aves chamadas 'paliteiros' pousam sobre ele. As aves comem os restos de comida e os parasitas que ficam entre os dentes do jacaré. O jacaré fica com os dentes limpos e a ave se alimenta. Nenhum depende do outro para viver. Que relação é essa?",
+        opcoes: ["Protocooperação", "Mutualismo", "Parasitismo", "Predação"],
+        correta: "Protocooperação"
+    },
+    {
+        pergunta: "O pássaro-vaqueiro pousa sobre o gado e come os carrapatos que estão agarrados à pele do animal. O gado fica livre dos parasitas e o pássaro se alimenta. Os dois se dão bem, mas cada um segue seu caminho sem precisar do outro. Que relação é essa?",
+        opcoes: ["Protocooperação", "Comensalismo", "Mutualismo", "Competição"],
+        correta: "Protocooperação"
+    },
+
+    // Amensalismo
+    {
+        pergunta: "O pinheiro-bravo soltou suas agulhas no chão e o solo ficou inabitável. As plantinhas vizinhas tentaram crescer, mas suas raízes queimaram. Que relação é essa?",
+        opcoes: ["Amensalismo", "Competição", "Predação", "Mutualismo"],
+        correta: "Amensalismo"
+    },
+    {
+        pergunta: "O eucalipto cresce rápido e, quando suas folhas caem, liberam substâncias que impedem que outras plantas cresçam ao seu redor. Que relação é essa?",
+        opcoes: ["Amensalismo", "Parasitismo", "Protocooperação", "Comensalismo"],
+        correta: "Amensalismo"
+    },
+    {
+        pergunta: "Os líquens crescem sobre as rochas e, ao se desenvolverem, liberam substâncias ácidas que vão desgastando a superfície da pedra. O líquen não ganha nada com o desgaste mas a rocha vai sendo lentamente destruída. Que relação é essa?",
+        opcoes: ["Amensalismo", "Competição", "Mutualismo", "Predação"],
+        correta: "Amensalismo"
+    },
+
+    // Canibalismo
+    {
+        pergunta: "O louva-a-deus dançou a noite inteira com sua parceira. No final, ela deu um abraço apertado e o macho virou o jantar. Amor que acaba em lanche. Que relação é essa?",
+        opcoes: ["Canibalismo", "Predação", "Parasitismo", "Competição"],
+        correta: "Canibalismo"
+    },
+    {
+        pergunta: "Algumas espécies de peixes, quando o alimento fica escasso, começam a se atacar e a comer os menores da própria espécie. Que relação é essa?",
+        opcoes: ["Canibalismo", "Predação", "Competição", "Mutualismo"],
+        correta: "Canibalismo"
+    },
+    {
+        pergunta: "A viúva-negra é uma aranha famosa por seu veneno, mas também por seu comportamento. Após o acasalamento, a fêmea envolve o macho em sua teia e o devora para obter proteínas que ajudarão na produção dos ovos. Que relação é essa?",
+        opcoes: ["Canibalismo", "Parasitismo", "Predação", "Comensalismo"],
+        correta: "Canibalismo"
+    },
+
+    // Sociedade
+    {
+        pergunta: "Na assembleia das abelhas ficou decidido o seguinte: umas vão buscar pólen, outras vão cuidar dos ovos, e um time especial fica na entrada para expulsar os inimigos. Que relação é essa?",
+        opcoes: ["Sociedade", "Colônia", "Mutualismo", "Competição"],
+        correta: "Sociedade"
+    },
+    {
+        pergunta: "No formigueiro, cada formiga tem sua função: uma procura comida, outra cuida dos ovos, outra defende a entrada. Elas se comunicam por substâncias químicas e vivem em um sistema organizado. Que relação é essa?",
+        opcoes: ["Sociedade", "Colônia", "Comensalismo", "Predação"],
+        correta: "Sociedade"
+    },
+    {
+        pergunta: "Os cupins constroem morros gigantes e dividem o trabalho: o rei e a rainha se reproduzem, os soldados protegem e os operários cuidam da construção e alimentação. Cada um faz sua parte, mas vivem separados. Que relação é essa?",
+        opcoes: ["Sociedade", "Colônia", "Mutualismo", "Parasitismo"],
+        correta: "Sociedade"
+    }
 ];
 
 // Variáveis de estado
